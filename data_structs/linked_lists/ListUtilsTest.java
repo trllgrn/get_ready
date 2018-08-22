@@ -1,4 +1,4 @@
-package data_structs;
+package linked_lists;
 import org.junit.*;
 
 public class ListUtilsTest {

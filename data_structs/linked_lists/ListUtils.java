@@ -1,3 +1,5 @@
+package get_ready.data_structs.linked_lists;
+
 import java.util.LinkedList;
 
 public class ListUtils {

@@ -1,3 +1,5 @@
+package get_ready.data_structs.linked_lists;
+
 public class ListNode<T> {
     //generic ListNode class
     T data;
