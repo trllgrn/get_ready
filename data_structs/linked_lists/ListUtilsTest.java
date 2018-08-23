@@ -14,4 +14,34 @@ public class ListUtilsTest {
         b.next = c;
         assertThat(ListUtils.size(a), is(3));
     }
+
+    @Test
+    public void ListUtilsToStringTest() {
+        ListNode<Integer> a = new ListNode<Integer>(1);
+        ListNode<Integer> b = new ListNode<Integer>(3);
+        ListNode<Integer> c = new ListNode<Integer>(5);
+        a.next = b;
+        b.next = c;
+        String listRep = "[1|*]->[3|*]->[5|~]";
+        assertThat(ListUtils.toString(a),is(listRep));
+    }
+
+    @Test
+    public void ListUtilsMergeTest() {
+        ListNode<Integer> a = new ListNode<Integer>(1);
+        ListNode<Integer> b = new ListNode<Integer>(3);
+        ListNode<Integer> c = new ListNode<Integer>(5);
+        a.next = b;
+        b.next = c;
+        ListNode<Integer> e = new ListNode<Integer>(2);
+        ListNode<Integer> f = new ListNode<Integer>(4);
+        ListNode<Integer> g = new ListNode<Integer>(6);
+        e.next = f;
+        f.next = g;
+        assertThat(ListUtils.size(a), is(3));
+        //merge the lists
+        ListNode<Integer> merged = ListUtils.merge(a,e);
+        //check the new size
+        assertThat(ListUtils.size(merged), is(6));
+    }
 }
