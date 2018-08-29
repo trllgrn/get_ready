@@ -39,9 +39,23 @@ public class ListUtilsTest {
         e.next = f;
         f.next = g;
         assertThat(ListUtils.size(a), is(3));
-        //merge the lists
-        ListNode<Integer> merged = ListUtils.merge(a,e);
+        //mergeNow the lists
+        ListNode<Integer> mergedList = ListUtils.mergeNew(a,e);
         //check the new size
-        assertThat(ListUtils.size(merged), is(6));
+        assertThat(ListUtils.size(mergedList), is(6));
+        assertThat(ListUtils.elementAt(mergedList,0), is(1));
+        assertThat(ListUtils.elementAt(mergedList,5), is(6));
+    }
+
+    @Test
+    public void ListUtilsElementAtTest() {
+        ListNode<Integer> a = new ListNode<Integer>(1);
+        ListNode<Integer> b = new ListNode<Integer>(3);
+        ListNode<Integer> c = new ListNode<Integer>(5);
+        a.next = b;
+        b.next = c;
+        assertThat(ListUtils.elementAt(a,1), is(3));
+        assertThat(ListUtils.elementAt(a,0), is(1));
+        assertThat(ListUtils.elementAt(a,2), is(5));
     }
 }
