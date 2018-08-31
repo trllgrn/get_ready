@@ -2,6 +2,7 @@ package get_ready.data_structs.linked_lists;
 
 
 import java.util.LinkedList;
+import java.util.List;
 
 public class ListUtils {
     public static int size(ListNode<Integer> list) {
@@ -74,6 +75,46 @@ public class ListUtils {
 
         //3. both lists are exhausted. No actions needed
 
+
+        return mergedListHead;
+    }
+
+    public static ListNode mergeInPlace(ListNode<Integer> list1Head, ListNode<Integer> list2Head) {
+        ListNode<Integer> mergedListHead = null;
+        ListNode<Integer> mergedListCurrent = null;
+        ListNode<Integer> mergedListPrevious = null;
+        ListNode<Integer> list1Ptr = list1Head;
+        ListNode<Integer> list2Ptr = list2Head;
+        while (list1Ptr != null && list2Ptr != null) {
+            if (list1Ptr.data <= list2Ptr.data) {
+                mergedListCurrent = list1Ptr;
+                list1Ptr = list1Ptr.next;
+            } else if (list2Ptr.data < list1Ptr.data) {
+                mergedListCurrent = list2Ptr;
+                list2Ptr = list2Ptr.next;
+            }
+
+            if (mergedListPrevious == null) {
+                //need to set the head
+                mergedListHead = mergedListCurrent;
+                mergedListPrevious = mergedListCurrent;
+            } else {
+                mergedListPrevious.next = mergedListCurrent;
+                mergedListPrevious = mergedListCurrent;
+            }
+        }
+
+        //if we have exited the loop one of three things has happened
+        if (list1Ptr == null && list2Ptr != null) {
+            //1. the 1st list is exhausted and some of the 2nd list remains
+            //Set mergedListPrevious.next to the remainder of list2
+            mergedListPrevious.next = list2Ptr;
+
+        } else if (list2Ptr == null && list1Ptr != null) {
+            //2. the 2nd list is exhausted and some of the 1st list remains
+            //Set mergedListPrevious.next to the remainder of list1
+            mergedListPrevious.next = list1Ptr;
+        }
 
         return mergedListHead;
     }
