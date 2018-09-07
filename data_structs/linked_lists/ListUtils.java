@@ -1,9 +1,6 @@
 package get_ready.data_structs.linked_lists;
 
 
-import java.util.LinkedList;
-import java.util.List;
-
 public class ListUtils {
     public static int size(ListNode<Integer> list) {
         int count = 0;
