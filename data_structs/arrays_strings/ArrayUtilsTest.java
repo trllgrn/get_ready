@@ -1,6 +1,5 @@
 package get_ready.data_structs.arrays_strings;
 
-import ctci2018.ArraysAndStrings;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
