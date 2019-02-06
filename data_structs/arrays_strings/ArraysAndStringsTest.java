@@ -128,6 +128,7 @@ public class ArraysAndStringsTest {
         assertThat(ArraysAndStrings.compress(test1), is("aa"));
         String test2 = "aabcccccaaa";
         String test2compressed = "a2b1c5a3";
+        String test3 = "aaaaabbbbaaaabbddc";
         assertThat(ArraysAndStrings.compress(test2),is(test2compressed));
     }
 

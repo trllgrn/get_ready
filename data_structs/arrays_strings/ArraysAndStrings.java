@@ -130,8 +130,8 @@ public class ArraysAndStrings {
 
 
 
-    //problem 1.5 1.5 One Away
-    //Write a method that test to see if a string is one edit away from being another string
+    //problem 1.5 One Away
+    //Write a method that tests to see if a string is one edit away from being another string
     //Example
 //    String[][] tests = {{"a", "b", "true"},
 //            {"", "d", "true"},
@@ -176,7 +176,7 @@ public class ArraysAndStrings {
             }
 
             while (shortIndex < shorter.length() && longIndex < longer.length()) {
-                //check to see if the elements at the current index the different
+                //check to see if the elements at the current index are different
                 if (shorter.charAt(shortIndex) != longer.charAt(longIndex)) {
                     //check to see if we've seen a difference already
                     if (diffFound) {
@@ -224,10 +224,14 @@ public class ArraysAndStrings {
                     tokenCount++;
                 }
                 else {
+                    //this is a new character
                     compressed.append(prevToken);
+                    //add the letter
                     compressed.append(tokenCount);
+                    //add the count for that letter
                     prevToken = currToken;
                     tokenCount = 1;
+                    //reset the counter
                 }
             }
             //append the final parsed character
@@ -248,7 +252,7 @@ public class ArraysAndStrings {
 
 
     //problem 1.8 Zero Matrix
-    //Write an algorithm such that if an element in an MxN matrix is 0, tis entire ro and column are set to 0.
+    //Write an algorithm such that if an element in an MxN matrix is 0, tis entire row and column are set to 0.
 
 
 
