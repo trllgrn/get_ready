@@ -1,6 +1,8 @@
 package get_ready.data_structs.linked_lists;
 
 
+import java.util.HashMap;
+
 public class ListUtils {
     public static int size(ListNode<Integer> list) {
         int count = 0;
@@ -129,4 +131,95 @@ public class ListUtils {
 
         return nodePtr.data;
     }
+
+    public static ListNode oddEvenList(ListNode head) {
+        int listCount = 1;
+        ListNode oddHead = head;
+        ListNode oddPtr = oddHead;
+        ListNode evenHead = null;
+        ListNode evenPtr = null;
+        ListNode nodePtr = head;
+        while (nodePtr != null) {
+            if (listCount % 2 != 0) {
+                //odd node
+                if (listCount != 1) {
+                    oddPtr.next = nodePtr;
+                    oddPtr = nodePtr;
+                }
+            } else {
+                //even node
+                if (evenHead == null) {
+                    evenHead = nodePtr;
+                    evenPtr = evenHead;
+                } else {
+                    evenPtr.next = nodePtr;
+                    evenPtr = nodePtr;
+                }
+
+            }
+            nodePtr = nodePtr.next;
+            listCount++;
+        }
+        //stitch even list to the end of the odd list
+        oddPtr.next = evenHead;
+        return head;
+    }
+
+    //problem 2.1 Remove Dups
+    // Write code to remove duplicates from an unsorted Linked List
+    // How would you solve this if a temporary buffer is not allowed
+    public static void removeDups(Lists.ListNode<Integer> list) {
+        HashMap<Integer,Integer> nodeMap = new HashMap<Integer,Integer>();
+        Lists.ListNode<Integer> current = list;
+        Lists.ListNode<Integer> previous = null;
+        while (current != null) {
+            //have we seen this node before
+            if (nodeMap.get(current.data) == null) {
+                //This is a new value, add it to the map
+                nodeMap.put(current.data,1);
+                previous = current;
+            }
+            else {
+                //we've seen this value before, need to skip it.
+                previous.next = current.next;
+                //[prev| ] -> [curr| ] -> [next| ]
+            }
+            current = current.next;
+        }
+    }
+
+
+    //problem 2.2 Kth to Last
+    //Write code to find the Kth to last element of a singly linked list
+
+
+    //problem 2.3 Delete Middle Node
+    //Implement an algorithm to delete the middle node of a linked list, given access to only that node
+
+    //problem 2.4 Partition
+    //Write code to partition a linked list around a value x, such that all nodes less than x come before
+    //all the nodes greater than or equal to x. If x is contained within the list, the values of x, only
+    //need to be after the elements less than x. The partition element x can appear anywhere in the "right partition"
+    //it does not need to appear between the left and right partitions
+
+
+    //problem 2.5 Sum Lists
+    //Write a method which returns the sum of two numbers represented by linked lists
+    // 7->1->6 = 617 5->9->2 = 295
+    // 617 + 295 = 912
+
+
+    //problem 2.6 Palindrome
+    //Implement a function to check if a Linked List is a palindrome
+
+
+
+    //problem 2.7 Intersection
+    //Given two singly linked lists, determine if the two lists intersect.  Return the intersecting node.  Intersection
+    //is defined by reference, not value
+
+
+    //problem 2.8 Loop Detection
+    //Given a circular linked list, implement an algorithm that returns the node at the beginning of the loop
+
 }

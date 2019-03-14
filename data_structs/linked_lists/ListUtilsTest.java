@@ -79,4 +79,24 @@ public class ListUtilsTest {
         assertThat(ListUtils.elementAt(mergedList,0), is(1));
         assertThat(ListUtils.elementAt(mergedList,5), is(6));
     }
+
+    @Test
+    public void ListUtilsoddEvenListTest() {
+        ListNode<Integer> a = new ListNode<Integer>(1);
+        ListNode<Integer> b = new ListNode<Integer>(2);
+        ListNode<Integer> c = new ListNode<Integer>(3);
+        ListNode<Integer> d = new ListNode<Integer>(4);
+        ListNode<Integer> e = new ListNode<Integer>(5);
+        ListNode<Integer> f = new ListNode<Integer>(6);
+        a.next = b;
+        b.next = c;
+        c.next = d;
+        d.next = e;
+        e.next = f;
+        assertThat(ListUtils.size(a), is(6));
+        System.out.println("Initial List: " + ListUtils.toString(a));
+        ListNode<Integer> massaged = ListUtils.oddEvenList(a);
+        System.out.println("OddEven List: " + ListUtils.toString(a));
+        assertThat(ListUtils.elementAt(massaged,1), is(3));
+    }
 }
