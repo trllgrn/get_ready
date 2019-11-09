@@ -1,4 +1,4 @@
-package get_ready.data_structs.linked_lists;
+package data_structs.linked_lists;
 
 
 import java.util.HashMap;
@@ -168,10 +168,10 @@ public class ListUtils {
     //problem 2.1 Remove Dups
     // Write code to remove duplicates from an unsorted Linked List
     // How would you solve this if a temporary buffer is not allowed
-    public static void removeDups(Lists.ListNode<Integer> list) {
+    public static void removeDups(ListNode<Integer> list) {
         HashMap<Integer,Integer> nodeMap = new HashMap<Integer,Integer>();
-        Lists.ListNode<Integer> current = list;
-        Lists.ListNode<Integer> previous = null;
+        ListNode<Integer> current = list;
+        ListNode<Integer> previous = null;
         while (current != null) {
             //have we seen this node before
             if (nodeMap.get(current.data) == null) {

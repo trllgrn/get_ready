@@ -1,4 +1,4 @@
-package get_ready.data_structs.linked_lists;
+package data_structs.linked_lists;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.*;

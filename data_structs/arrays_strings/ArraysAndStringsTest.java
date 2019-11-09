@@ -1,6 +1,6 @@
-package get_ready.data_structs.arrays_strings;
+package data_structs.arrays_strings;
 
-import get_ready.data_structs.arrays_strings.ArraysAndStrings;
+import data_structs.arrays_strings.ArraysAndStrings;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

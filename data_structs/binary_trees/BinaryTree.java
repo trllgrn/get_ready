@@ -1,4 +1,5 @@
-package get_ready.data_structs.binary_trees;
+
+package data_structs.binary_trees;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

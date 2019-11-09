@@ -1,4 +1,4 @@
-package get_ready.data_structs.arrays_strings;
+package data_structs.arrays_strings;
 
 public class ArrayUtils {
     public static int[] mergeSorted(int[] list1, int[] list2) {

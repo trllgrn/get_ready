@@ -1,4 +1,4 @@
-package get_ready.data_structs.arrays_strings;
+package data_structs.arrays_strings;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package get_ready.data_structs.binary_trees;
+package data_structs.binary_trees;
 
 public class BSTNode<T> {
     T data;
