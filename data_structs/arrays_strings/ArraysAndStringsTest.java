@@ -1,6 +1,4 @@
 package data_structs.arrays_strings;
-
-import data_structs.arrays_strings.ArraysAndStrings;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -130,6 +128,19 @@ public class ArraysAndStringsTest {
         String test2compressed = "a2b1c5a3";
         String test3 = "aaaaabbbbaaaabbddc";
         assertThat(ArraysAndStrings.compress(test2),is(test2compressed));
+    }
+
+    @Test
+    public void testIsRotation() throws Exception {
+        String test1a = "apple";
+        String test1b = "pleap";
+        String test2a = "waterbottle";
+        String test2b = "erbottlewat";
+        String test3a = "camera";
+        String test3b = "macera";
+        assertTrue(ArraysAndStrings.isRotation(test1a,test1b));
+        assertTrue(ArraysAndStrings.isRotation(test2a,test2b));
+        assertFalse(ArraysAndStrings.isRotation(test3a,test3b));
     }
 
 }
